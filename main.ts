@@ -1368,16 +1368,29 @@ namespace hicbit {
         return 255 - Math.round(adValue);
     }
 
-    //% weight=90 block="NFC【IIC】|接口%pin|值(0~255)"
-    //% group="NFC【IIC】"
+    //% weight=90 block="压力2|接口%pin|值(0~255)"
+    //% group="压力"
     //% color=#4B974A
-    export function lightIIC(pin: SensorEnum): number {
-        // 119 120
-        let SCL = 119;
-        let SDL = 120;
-        pins.setPull(DigitalPin.P20, PinPullMode.PullUp);
-        basic.pause(1000);
-        pins.setPull(DigitalPin.P20, PinPullMode.PullDown);
-        return 0;
+    export function GetIICPressureValue2(pin: SensorEnum): number {
+        let ADCPin: AnalogPin;
+        switch (pin) {
+            case SensorEnum.portA:
+                ADCPin = AnalogPin.P1;
+                break;
+            case SensorEnum.portB:
+                ADCPin = AnalogPin.P2;
+                break;
+            case SensorEnum.portC:
+                ADCPin = AnalogPin.P3;
+                break;
+            case SensorEnum.portD:
+                ADCPin = AnalogPin.P4;
+                break;
+        }
+        let adValue = pins.analogReadPin(ADCPin);
+        adValue = adValue * 255 / 1023;
+        return 255 - Math.round(adValue);
     }
+
+    
 }
