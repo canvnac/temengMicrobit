@@ -1371,13 +1371,13 @@ namespace hicbit {
     //% weight=90 block="NFC【IIC】|接口%pin|值(0~255)"
     //% group="NFC【IIC】"
     //% color=#4B974A
-    export function lightIIC(pin: SensorEnum): string {
+    export function lightIIC(pin: SensorEnum): number {
         // 119 120
-        let SCL = 119
-        let SDL = 120
-        pins.setPull(DigitalPin.P20, PinPullMode.PullUp)
+        let SCL = 119;
+        let SDL = 120;
+        pins.setPull(DigitalPin.P20, PinPullMode.PullUp);
         basic.pause(1000);
-        pins.setPull(DigitalPin.P20, PinPullMode.PullDown)
-        return "hello!"
+        pins.setPull(DigitalPin.P20, PinPullMode.PullDown);
+        return 0;
     }
 }
