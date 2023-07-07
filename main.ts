@@ -183,7 +183,7 @@ enum IrProtocol {
  * Custom blocks
  */
 //% weight=100 color=#00CCFF icon="\uf2c5" block="特萌扩展"
-//% groups='["主机", "电机", "蜂鸣器", "RGB彩灯", "超声波", "红外避障", "光敏", "温湿度", "旋钮", "声音", "碰撞", "循迹", "按键", "摇杆", "红外接收", "压力", "NFC【IIC】"]'
+//% groups='["主机", "电机", "蜂鸣器", "RGB彩灯", "超声波", "红外避障", "光敏", "温湿度", "旋钮", "声音", "碰撞", "循迹", "按键", "摇杆", "红外接收", "压力"]'
 namespace hicbit {
     /*
     * hicbit initialization, please execute at boot time
@@ -1344,53 +1344,7 @@ namespace hicbit {
     function setBufferMode(pin: DigitalPin, mode: number) {
     }
 
-    //% weight=90 block="压力|接口%pin|值(0~255)"
-    //% group="压力"
-    //% color=#4B974A
-    export function GetIICPressureValue(pin: SensorEnum): number {
-        let ADCPin: AnalogPin;
-        switch (pin) {
-            case SensorEnum.portA:
-                ADCPin = AnalogPin.P1;
-                break;
-            case SensorEnum.portB:
-                ADCPin = AnalogPin.P2;
-                break;
-            case SensorEnum.portC:
-                ADCPin = AnalogPin.P3;
-                break;
-            case SensorEnum.portD:
-                ADCPin = AnalogPin.P4;
-                break;
-        }
-        let adValue = pins.analogReadPin(ADCPin);
-        adValue = adValue * 255 / 1023;
-        return 255 - Math.round(adValue);
-    }
-
-    //% weight=90 block="压力2|接口%pin|值(0~255)"
-    //% group="压力"
-    //% color=#4B974A
-    export function GetIICPressureValue2(pin: SensorEnum): number {
-        let ADCPin: AnalogPin;
-        switch (pin) {
-            case SensorEnum.portA:
-                ADCPin = AnalogPin.P1;
-                break;
-            case SensorEnum.portB:
-                ADCPin = AnalogPin.P2;
-                break;
-            case SensorEnum.portC:
-                ADCPin = AnalogPin.P3;
-                break;
-            case SensorEnum.portD:
-                ADCPin = AnalogPin.P4;
-                break;
-        }
-        let adValue = pins.analogReadPin(ADCPin);
-        adValue = adValue * 255 / 1023;
-        return 255 - Math.round(adValue);
-    }
+    
 
     
 }
