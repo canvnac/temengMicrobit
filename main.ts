@@ -1371,7 +1371,7 @@ namespace hicbit {
     //% weight=90 block="压强|接口%pin|值(10~25)"
     //% group="压力"
     //% color=#4B974A
-    export function GetIICPressureValue(pin: DigitalPin): number {
+    export function yaQiang(pin: DigitalPin): number {
 
         return 255;
     }
