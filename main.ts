@@ -183,7 +183,7 @@ enum IrProtocol {
  * Custom blocks
  */
 //% weight=100 color=#00CCFF icon="\uf2c5" block="特萌扩展"
-//% groups='["主机", "电机", "蜂鸣器", "RGB彩灯", "超声波", "红外避障", "光敏", "温湿度", "旋钮", "声音", "碰撞", "循迹", "按键", "摇杆", "红外接收", "压力"]'
+//% groups='["主机", "电机", "蜂鸣器", "RGB彩灯", "超声波", "红外避障", "光敏", "温湿度", "旋钮", "声音", "碰撞", "循迹", "按键", "摇杆", "红外接收", "压力", "NFC_IIC"]'
 namespace hicbit {
     /*
     * hicbit initialization, please execute at boot time
@@ -1373,6 +1373,19 @@ namespace hicbit {
     //% color=#4B974A
     export function yaQiang(pin: DigitalPin): number {
 
+        return 255;
+    }
+
+    //% weight=90 block="NFC|接口%pin|值(10~25)"
+    //% group="NFC_IIC"
+    //% color=#4B974A
+    export function nfc(pin: DigitalPin): number {
+        // 119 120
+        // let SCL = 119;
+        // let SDL = 120;
+        pins.setPull(DigitalPin.P20, PinPullMode.PullUp);
+        basic.pause(1000);
+        pins.setPull(DigitalPin.P20, PinPullMode.PullDown);
         return 255;
     }
 }
