@@ -183,7 +183,7 @@ enum IrProtocol {
  * Custom blocks
  */
 //% weight=100 color=#00CCFF icon="\uf2c5" block="特萌扩展"
-//% groups='["主机", "电机", "蜂鸣器", "RGB彩灯", "超声波", "红外避障", "光敏", "温湿度", "旋钮", "声音", "碰撞", "循迹", "按键", "摇杆", "红外接收", "压力", "压力2"]'
+//% groups='["主机", "电机", "蜂鸣器", "RGB彩灯", "超声波", "红外避障", "光敏", "温湿度", "旋钮", "声音", "碰撞", "循迹", "按键", "摇杆", "红外接收", "压力"]'
 namespace hicbit {
     /*
     * hicbit initialization, please execute at boot time
@@ -1369,7 +1369,7 @@ namespace hicbit {
     }
 
     //% weight=90 block="压力2|接口%pin|值(0~255)"
-    //% group="压力2"
+    //% group="压力"
     //% color=#4B974A
     export function GetIICPressureValue2(pin: SensorEnum): number {
         let ADCPin: AnalogPin;
