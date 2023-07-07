@@ -1368,10 +1368,10 @@ namespace hicbit {
         return 255 - Math.round(adValue);
     }
 
-    //% weight=90 block="NFC【IIC】"
+    //% weight=90 block="NFC【IIC】|接口%pin|值(0~255)"
     //% group="NFC【IIC】"
     //% color=#4B974A
-    export function lightIIC(): string {
+    export function lightIIC(pin: SensorEnum): string {
         // 119 120
         let SCL = 119
         let SDL = 120
